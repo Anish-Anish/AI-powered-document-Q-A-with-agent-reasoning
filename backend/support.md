@@ -1,6 +1,7 @@
 # Support Guide — Build This Backend From Scratch
 
-> **Audience:** You are a backend engineer. You want to understand every piece of this project by typing it yourself. This guide walks you through the entire backend — file by file, class by class — in the exact order you should build it. No frontend stuff. Just pure backend.
+> **Audience:** You are a backend engineer. You want to understand every piece of this project by typing it yourself. 
+> This guide walks you through the entire backend — file by file, class by class — in the exact order you should build it. No frontend stuff. Just pure backend.
 
 ---
 
@@ -38,26 +39,26 @@ Imagine you have a box of documents (PDFs, Word files, text files). You want to:
 That's what this backend does. Here's the mental model:
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│                     YOUR BACKEND                          │
+┌──────────────────────────────────────────────────────────-┐
+│                        YOUR BACKEND                       │
 │                                                           │
-│  ┌─────────┐    ┌─────────────┐    ┌──────────────────┐  │
-│  │ FastAPI  │───▶│   Routes    │───▶│    Services      │  │
-│  │ (door)   │    │ (receptionist)   │ (workers)        │  │
+│  ┌─────────┐    ┌─────────────┐    ┌─────────────────-─┐  │
+│  │ FastAPI │───▶│   Routes    │──▶ │    Services       │  │
+│  │ (door)  │    │ (receptionist)   │ (workers)         │  │
 │  └─────────┘    └─────────────┘    │                   │  │
 │                                     │  ┌─────────────┐ │  │
-│                                     │  │ doc_processor│ │  │
-│                                     │  │ (reads files)│ │  │
+│                                     │  │doc_processor│ │  │
+│                                     │  │(reads files)│ │  │
 │                                     │  └──────┬──────┘ │  │
 │                                     │         ▼        │  │
 │                                     │  ┌─────────────┐ │  │
-│                                     │  │ vector_store │ │  │
-│                                     │  │ (memory box) │ │  │
+│                                     │  │ vector_store│ │  │
+│                                     │  │ (memory box)│ │  │
 │                                     │  └─────────────┘ │  │
-│                                     │                   │  │
+│                                     │                  │  │
 │                                     │  ┌─────────────┐ │  │
-│                                     │  │   agent      │ │  │
-│                                     │  │ (the brain)  │ │  │
+│                                     │  │   agent     │ │  │
+│                                     │  │ (the brain) │ │  │
 │                                     │  └─────────────┘ │  │
 │                                     └──────────────────┘  │
 │                                                           │
@@ -65,7 +66,7 @@ That's what this backend does. Here's the mental model:
 │  │ MongoDB  │    │   ChromaDB   │                         │
 │  │(notebook)│    │(memory box)  │                         │
 │  └──────────┘    └──────────────┘                         │
-└──────────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────────-┘
 ```
 
 Think of it like a library:
@@ -188,8 +189,8 @@ CHUNK_SIZE=500
 CHUNK_OVERLAP=50
 EOF
 ```
-
 ---
+
 
 ## 4. Phase 2: Configuration
 
